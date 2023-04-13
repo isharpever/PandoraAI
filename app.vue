@@ -117,12 +117,12 @@ body {
             hsla(240, 100%, 2%, 0) 95%),
         radial-gradient(
             80vmax 50vmax at 110% -10%,
-            hsla(175, 100%, 60%, 0.9) 0%,
-            hsla(200, 100%, 50%, 0.5) 50%,
+            hsla(173, 6%, 31%, 0.693) 0%,
+            hsla(180, 2%, 12%, 0.297) 50%,
             hsla(240, 100%, 50%, 0) 95%),
         radial-gradient(
             90vmax 50vmax at 50vmax 50vmax,
-            hsla(260, 100%, 60%, 0.9) 0%,
+            hsla(256, 14%, 15%, 0.341) 0%,
             hsla(240, 100%, 60%, 0) 95%)
         var(--background);
 }

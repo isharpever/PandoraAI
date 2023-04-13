@@ -3,7 +3,8 @@ function isMobile() {
 }
 
 export const useAppStore = defineStore('appStore', () => {
-    const isMobileMenu = ref(isMobile());
+    // const isMobileMenu = ref(isMobile());
+    const isMobileMenu = ref(false);
     const isMenuOpen = ref(!isMobileMenu.value);
     const isMenuOpening = ref(false);
     const isMenuClosing = ref(false);
