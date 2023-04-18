@@ -32,6 +32,7 @@
     "fork-corner": "^2.0.1",
     "highlight.js": "^11.7.0",
     "isomorphic-dompurify": "^1.2.0",
+    "keycloak-js": "^21.0.2",
     "lodash": "^4.17.21",
     "marked": "^4.3.0",
     "pinia": "^2.0.33",

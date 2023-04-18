@@ -1,17 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     ssr: true,
-    // "app": {
-    //     "baseURL": "/",
-    //     "buildAssetsDir": "/_nuxt/",
-    //     "cdnURL": ""
-    // },
+    "app": {
+        "baseURL": "/",
+        "buildAssetsDir": "/_nuxt/",
+        "cdnURL": ""
+    },
     runtimeConfig: {
-        // "app": {
-        //     "baseURL": "/",
-        //     "buildAssetsDir": "/_nuxt/",
-        //     "cdnURL": ""
-        // },
+        "app": {
+            "baseURL": "/",
+            "buildAssetsDir": "/_nuxt/",
+            "cdnURL": ""
+        },
         public: {
             apiBaseUrl: process.env.API_BASE_URL,
         },
@@ -55,4 +55,10 @@ export default defineNuxtConfig({
             useWebmanifestExtension: false,
         },
     },
+    plugins: [
+        { src: '~/plugins/keycloak.js', mode: 'client' }
+    ],
+    router: {
+        middleware: ['auth'],
+    }
 });
