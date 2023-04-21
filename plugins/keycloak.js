@@ -26,6 +26,19 @@ export default defineNuxtPlugin(nuxtApp => {
         console.log('AuthError')
       }
 
+      keycloak.onTokenExpired = () => {
+        debugger
+        keycloak.updateToken().then(refreshed => {
+          if (refreshed) {
+            console.log('updateToken success')
+          } else {
+            console.log('updateToken fail')
+          }
+        }).catch(error => {
+          console.log('updateToken error', error)
+        });
+      }
+
       nuxtApp.$keycloak = keycloak
     }
   })

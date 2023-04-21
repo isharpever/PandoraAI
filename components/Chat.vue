@@ -8,6 +8,7 @@ import BingIcon from '~/components/Icons/BingIcon.vue';
 import GPTIcon from '~/components/Icons/GPTIcon.vue';
 import ClientDropdown from '~/components/Chat/ClientDropdown.vue';
 import ClientSettings from '~/components/Chat/ClientSettings.vue';
+import jwtDecode from 'jwt-decode';
 
 marked.setOptions({
     silent: true,
@@ -234,10 +235,16 @@ const sendMessage = async (input, parentMessageId = null) => {
         }
     }
 
+    // 获取access token
+    const { $keycloak } = useNuxtApp();
+    // console.log($keycloak.idToken);
+    // console.log(jwtDecode($keycloak.idToken));
+
     const opts = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            Authorization: `Bearer ${$keycloak.token}`,
         },
         body: JSON.stringify(data),
     };
